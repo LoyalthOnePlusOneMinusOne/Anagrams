@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anagrams</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <form id="anagrams" method="post">
+        <input type="text" id="word">
+        <input type="submit" onclick="return getWords()" value="Get words">
+    </form>
+
+    <div id="display" style="height: 50px; width: 100%;"></div>
+
+    <script type="text/javascript">
+      //string permutation
+      //https://stackoverflow.com/questions/5232295/is-there-any-pre-built-method-for-finding-all-permutations-of-a-given-string-in-j
+      //permutation('','123') will return
+      //["123", "132", "213", "231", "312", "321"]
+      function permutation(start, string) {
+          //base case
+          if ( string.length == 1 ) {
+              return [ start + string ];
+          } else {
+
+              var returnResult = [];
+              for (var i=0; i < string.length; i++) {
+                  var result = permutation (string[i], string.substr(0, i) + string.substr(i+1));
+                  for (var j=0; j<result.length; j++) {
+                      returnResult.push(start + result[j]);
+                  }
+              }
+              return returnResult;
+          }
+      }
+
+      function getWords(){
+        var a = document.forms["anagrams"]["word"].value;
+        var display=document.getElementById("display")
+        display.innerHTML=permutation('',a)
+        return false;
+      }
+    </script>
+  </body>
+</html>
+
