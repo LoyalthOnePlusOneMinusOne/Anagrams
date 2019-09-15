@@ -3,7 +3,7 @@
  *
  */
 
-@Library('loyaltyOne-shared-lib@develop') _
+@Library('loyaltyOne-shared-lib@master') _
 
 import com.loyaltyOne.anagrams.*
 
