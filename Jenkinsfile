@@ -5,7 +5,7 @@
 
 @Library('loyaltyOne-shared-lib@develop') _
 
-import com.loyaltyone.anagram.*
+import com.loyaltyOne.anagrams.*
 
 node {
   new PlayWords().speak()
