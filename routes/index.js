@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 /* GET Anagrams input */
 router.get('/anagrams', function(req, res) {
-    res.render('anagrams', { title: 'Anagrams: Input a word' });
+    res.render('anagrams', { title: 'Anagrams' });
 });
 
 module.exports = router;

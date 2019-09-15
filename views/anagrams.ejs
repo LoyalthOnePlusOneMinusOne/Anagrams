@@ -9,22 +9,22 @@
 
     <form id="anagrams" method="post">
         <input type="text" id="word">
-        <input type="submit" onclick="return getWords()" value="Get words">
+        <input type="submit" onclick="return getWords()" value="Get anagrams">
     </form>
-
+    <br/>
     <div id="display" style="height: 50px; width: 100%;"></div>
 
     <script type="text/javascript">
-      //string permutation
-      //https://stackoverflow.com/questions/5232295/is-there-any-pre-built-method-for-finding-all-permutations-of-a-given-string-in-j
-      //permutation('','123') will return
-      //["123", "132", "213", "231", "312", "321"]
+      // Reference:
+      // string permutation
+      // https://stackoverflow.com/questions/5232295/is-there-any-pre-built-method-for-finding-all-permutations-of-a-given-string-in-j
+      // permutation('','123') will return
+      // ["123", "132", "213", "231", "312", "321"]
       function permutation(start, string) {
           //base case
           if ( string.length == 1 ) {
               return [ start + string ];
           } else {
-
               var returnResult = [];
               for (var i=0; i < string.length; i++) {
                   var result = permutation (string[i], string.substr(0, i) + string.substr(i+1));
